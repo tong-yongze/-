@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 边界符
+        // 只要包含123 都是true
+        var rg = /abc/;
+        console.log(rg.test('abc'));
+        console.log(rg.test('aaaaabc'));
+        console.log(rg.test('eee'));
+        console.log('------------');
+        var reg = /^abc/;  // 必须以abc 开始的
+        console.log(reg.test('abc'));  // true
+        console.log(reg.test('abcddd'));  // true
+        console.log(reg.test('dddabc')); //false
+        console.log('------------');
+        var reg1 = /^abc$/;  // 要求必须是abc 字符串才符合
+        console.log(reg1.test('abc'));  // true
+        console.log(reg1.test('abcddd'));  // false
+        console.log(reg1.test('acbddd'));//false
+        console.log(reg1.test('dddabc')); //false
+    </script>
+</body>
+
+</html>

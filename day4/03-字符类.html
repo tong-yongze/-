@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 字符类 [] 表示有一系列字符可供选择 只要匹配其中一个就行
+        var rg = /[abc]/;
+        console.log(rg.test('andy'));
+        console.log(rg.test('baby'));
+        console.log(rg.test('cool'));
+        console.log(rg.test('purple'));
+        var rg1 = /^[abc]$/;   // 三选一  才是true
+        console.log('--------------');
+        console.log(rg1.test('ab'));
+        console.log(rg1.test('aa'));
+        console.log(rg1.test('a'));
+        console.log(rg1.test('c'));
+        console.log('--------------');
+        var rg2 = /^[a-z]$/;   // 26个字母任何一个字母返回true
+        console.log(rg2.test('a'));
+        console.log(rg2.test('z'));
+        console.log(rg2.test(11));
+        console.log('--------------');
+        var rg3 = /^[a-zA-Z0-9_-]$/   // 大写  下划线  横杠
+        console.log(rg3.test('z'));
+        console.log(rg3.test('Z'));
+        console.log(rg3.test('!'));
+        console.log(rg3.test('_'));
+        console.log('--------------');
+        var rg4 = /^[^a-zA-Z0-9_-]$/
+        console.log(rg4.test('z'));
+        console.log(rg4.test('Z'));
+        console.log(rg4.test('!'));   //  只有他是对的  因为里面不包含这个符号
+        console.log(rg4.test('_'));
+    </script>
+</body>
+
+</html>
