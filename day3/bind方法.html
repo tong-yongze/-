@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <script>
+        // var btns = document.querySelectorAll("button");
+        // for (i = 0; i < btns.length; i++) {
+        //     btns[i].onclick = function () {
+        //         this.disabled = true;
+        //         setTimeout(function () {
+        //             this.disabled = false;
+        //         }.bind(this), 2000)
+        //     }
+        // }
+
+
+        var btns = document.querySelectorAll('button')
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                this.disabled = true;
+                setTimeout(function () {
+                    this.disabled = false;
+                }.bind(this), 2000)
+            }
+        }
+
+        var btns = document.querySelectorAll("button");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                this.disabled = true;
+                setTimeout(function () {
+                    this.disabled = false;
+                }.bind(this), 2000)
+            }
+        }
+    </script>
+</body>
+
+</html>

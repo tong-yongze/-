@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 全局函数 fun   两个参数 n和o
+    function fun(n, o) {   // n 一直是 0  o是undeffined
+      console.log(o);
+      // 全局函数fun返回了一个对象，对象里有个方法叫fun
+      return {
+        // 对象中的fun方法 有一个参数 m
+        fun: function (m) {
+          // 对象里的fun方法如果被执行  会调用全局函数fun  返回一个对象
+          return fun(m, n); // return的是函数吗？No 是对象
+        }
+      };
+    }
+
+
+    // a = {那个对象}
+    // 调用全局函数fun，传入实参0，赋值给形参n
+    // 打印o，结果为undefined
+    // 返回对象，赋值给变量a
+    // var a = fun(0); // undefined
+    // // 对象调用fun方法，传入实参1，赋值给形参m
+    // // 调用全局函数fun，传入实参1，0  
+    // // 第二个实参0是因为，29行调用fun时，传入的实参0，赋值给了n，缓存起来了
+    // a.fun(1); // 0
+    // // 对象调用fun方法，传入实参1，赋值给形参m
+    // // 调用全局函数fun，传入实参2，0
+    // 由于每次调用都是使用的第一次返回的对象，没有额外开辟闭包空间，只开辟了一次闭包空间
+    // a.fun(2); // 0
+    // a.fun(3); // 0
+
+    // 每次调用意味着新开辟一个闭包空间，一共有3个闭包空间被使用
+    // var b = fun(0).fun(1).fun(2).fun(3); // undefined  0   1   2
+
+    // undefined  0  1   1
+    var c = fun(0).fun(1); // ?
+    c.fun(2); // ?
+    c.fun(3); // ?
+  </script>
+</body>
+
+</html>
