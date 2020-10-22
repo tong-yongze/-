@@ -43,15 +43,14 @@
         uname.onblur = function () {
             if (reg.test(this.value)) {
                 console.log('正确');
-                span.classList = 'right'
+                span.className = 'right';
                 span.innerHTML = '用户名输入正确'
             } else {
-                console.log('错误');
-                span.classList = 'wrong'
+                console.log('错误的');
+                span.className = 'wrong';
                 span.innerHTML = '用户名输入错误'
             }
         }
-
     </script>
 </body>
 

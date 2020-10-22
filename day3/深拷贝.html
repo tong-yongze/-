@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            id: 1,
+            name: 'andy',
+            msg: {
+                age: 18
+            },
+            color: ['pink', 'red']
+        };
+        var o = {};
+        // 封装
+        function deepCopy(newobj, oldobj) {
+            for (var k in oldobj) {
+                // 判断我们的属性值是属于什么数据类型
+                // 1. 获取属性值
+                var item = oldobj[k]
+                // 2.判断这个值是否是数组
+                if (item instanceof Array) {
+                    newobj[k] = [];
+                    // o.color = []
+                    deepCopy(newobj[k], item)
+                } else if (item instanceof Object) {
+                    // 3.判断这个值是否为对象
+                    newobj[k] = {};
+                    deepCopy(newobj[k], item)
+
+                } else {
+                    // 4.属性简单数据类型
+                    newobj[k] = item;
+                }
+
+
+            }
+        }
+        deepCopy(o, obj);
+        console.log(o);
+    </script>
+</body>
+
+</html>
