@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let o = {
+            name: 'tyz',
+            sayHi: function () {
+                console.log('大家好,我是' + this.name);
+                setTimeout(() => {
+                    console.log('大家好,我是' + this.name);
+                }, 1000)
+                // setTimeout(function () {
+                //     console.log('大家好,我是' + this.name);
+                // }.bind(this), 1000)
+            }
+
+        }
+        let p = { name: 'lxx' }
+        o.sayHi.call(p);
+    </script>
+</body>
+
+</html>
