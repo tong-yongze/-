@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let arr = [1, 23, 4, 56, 12, 25, 63, 8, 6]
+        // function between(a, b) {
+        //     return function (v) {
+        //         return v >= a && v <= 30;
+        //     };
+
+        // }
+        // console.log(arr.filter(between(10, 30)));
+
+        let lessons = [
+            {
+                title: '前端',
+                click: 89,
+                price: 12
+            },
+            {
+                title: '后端',
+                click: 45,
+                price: 120
+            },
+            {
+                title: 'AI',
+                click: 19,
+                price: 67
+            },
+            {
+                title: 'php',
+                click: 34,
+                price: 99
+            },
+        ]
+        function between(a, b) {
+            return function (v) {
+                return v.price >= a && v.price <= b;
+            };
+
+        }
+        console.table(lessons.filter(between(50, 100)));   // log  换成tablie
+    </script>
+</body>
+
+</html>
